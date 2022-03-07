@@ -22,7 +22,7 @@ let wk = config.WORKTYPE == 'public' ? false : true
         arama = arama.all;
         if(arama.length < 1) return await message.client.sendMessage(message.jid,Lang.NO_RESULT,MessageType.text, {quoted: message.data});
        var load = await message.client.sendMessage(message.jid,config.SONG_DOWN,MessageType.text, {quoted: message.data});
-        let thumbnail = arama[0].thumbnail.replace(/ /g, '+');
+        let thumbnail = arama[0].thumbnail.replace(/ /gi, '+');
         let title = arama[0].title.replace(' ', '+');
         let title2 = arama[0].title
         let views = arama[0].views;
