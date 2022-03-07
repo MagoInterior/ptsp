@@ -35,7 +35,7 @@ let wk = config.WORKTYPE == 'public' ? false : true
         got.stream(arama[0].image).pipe(fs.createWriteStream(title + '.jpg'));
         ffmpeg(stream)
             .audioBitrate(320)
-            .save('./' + title + '.mp3')
+            .save('./' + title2 + '.mp3')
             .on('end', async () => {
                 const writer = new ID3Writer(fs.readFileSync('./' + title2 + '.mp3'));
                 writer.setFrame('TIT2', arama[0].title)
