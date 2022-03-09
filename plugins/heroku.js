@@ -241,7 +241,7 @@ else if (Config.WORKTYPE == 'public') {
             });        
         });
     }));
-}
+
 Aqua.addCommand({pattern: 'dyno$', fromMe: true, dontAddCommandList: true, deleteCommand: false }, (async (message, match) => {
 
         heroku.get('/account').then(async (account) => {
