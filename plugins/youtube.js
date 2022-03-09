@@ -18,8 +18,15 @@ let wk = config.WORKTYPE == 'public' ? false : true
  Aqua.addCommand({pattern: 'song ?(.*)', fromMe: wk, desc: Lang.SONG_DESC, deleteCommand: false}, (async (message, match) => {
 
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_TEXT_SONG,MessageType.text, {quoted: message.data});
+  
   if (match[1].includes(';audio')){
-    let arama = await yts(match[1]);
+   
+    
+    
+        var split = match[1].split(';');
+        var song = split[0];
+        var type = split[1];
+    let arama = await yts(song);
         arama = arama.all;
         if(arama.length < 1) return await message.client.sendMessage(message.jid,Lang.NO_RESULT,MessageType.text, {quoted: message.data});
        var load = await message.client.sendMessage(message.jid,config.SONG_DOWN,MessageType.text, {quoted: message.data});
@@ -60,7 +67,11 @@ let wk = config.WORKTYPE == 'public' ? false : true
             });
    
   }else if (match[1].includes(';doc')){
-       let arama = await yts(match[1]);
+   
+    var split = match[1].split(';');
+        var song = split[0];
+        var type = split[1];
+       let arama = await yts(song);
         arama = arama.all;
         if(arama.length < 1) return await message.client.sendMessage(message.jid,Lang.NO_RESULT,MessageType.text, {quoted: message.data});
        var load = await message.client.sendMessage(message.jid,config.SONG_DOWN,MessageType.text, {quoted: message.data});
