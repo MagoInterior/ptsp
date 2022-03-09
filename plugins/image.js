@@ -8,7 +8,7 @@ const got = require("got");
 const Language = require('../language');
 const Lang = Language.getString('scrapers');
 var gis = require('g-i-s');
- Aqua.addCommand({pattern: 'img ?(.*)', fromMe: true, desc: Lang.IMG_DESC, deleteCommand: false}, (async (message, match) => { 
+ Aqua.addCommand({pattern: 'img ?(.*)', fromMe: wk, desc: Lang.IMG_DESC, deleteCommand: false}, (async (message, match) => { 
 
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text, { quoted: message.data });
         gis(match[1], async (error, result) => {
