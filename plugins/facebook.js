@@ -16,7 +16,7 @@ Aqua.addCommand({ pattern: 'fb ?(.*)', fromMe: wk, desc:Lang.FB_DESC, deleteComm
        if(!link.includes('https')) {
           const res3 = await axios.get(`https://masgimenz.my.id/facebook/?url=${match[1]}`)
           const status = res3.data.status
-          if(!status == 'true') {  return await message.client.sendMessage(message.jid,Lang.E_FB, MessageType.text, { quoted: message.data }); }
+          if(!status == true) {  return await message.client.sendMessage(message.jid,Lang.E_FB, MessageType.text, { quoted: message.data }); }
           else {
     var up= await message.client.sendMessage(message.jid,Lang.FB_UP, MessageType.text, { quoted: message.data });
     await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true}) ; 
