@@ -24,9 +24,9 @@ let wk = config.WORKTYPE == 'public' ? false : true
     
     
         var split = match[1].split(';');
-        var song = split[0];
+        var song1 = split[0];
         var type = split[1];
-     let arama = await yts(match[1]);
+     let arama = await yts(song1);
         arama = arama.all;
         if(arama.length < 1) return await message.client.sendMessage(message.jid,Lang.NO_RESULT,MessageType.text, {quoted: message.data});
        var load = await message.client.sendMessage(message.jid,config.SONG_DOWN,MessageType.text, {quoted: message.data});
@@ -53,9 +53,9 @@ let wk = config.WORKTYPE == 'public' ? false : true
   }else if (match[1].includes(';doc')){
    
     var split = match[1].split(';');
-        var song = split[0];
+        var song1 = split[0];
         var type = split[1];
-        let arama = await yts(match[1]);
+        let arama = await yts(song1);
         arama = arama.all;
         if(arama.length < 1) return await message.client.sendMessage(message.jid,Lang.NO_RESULT,MessageType.text, {quoted: message.data});
        var load = await message.client.sendMessage(message.jid,config.SONG_DOWN,MessageType.text, {quoted: message.data});
@@ -102,7 +102,7 @@ let wk = config.WORKTYPE == 'public' ? false : true
                 await message.client.deleteMessage(message.jid, {id: up.key.id, remoteJid: message.jid, fromMe: true}) ;
                 await message.client.sendMessage(message.jid,Buffer.from(song.data), MessageType.document, {filename: title2 + '.mp3', mimetype: 'audio/mpeg', ptt: false, quoted: message.data});
                 
-    }));
+  } }));
 
 
  Aqua.addCommand({pattern: 'video ?(.*)', fromMe: wk, desc: Lang.VIDEO_DESC, deleteCommand: false }, (async (message, match) => {
