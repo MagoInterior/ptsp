@@ -37,7 +37,7 @@ let wk = config.WORKTYPE == 'public' ? false : true
         let author = arama[0].author.name;
         let url = arama[0].url
         let stream = ytdl(arama[0].videoId, {
-            quality: 'highestaudio',
+            quality: 'lowestaudio',
         });
     
         got.stream(arama[0].image).pipe(fs.createWriteStream(title + '.jpg'));
