@@ -13,6 +13,7 @@ const Language = require('../language');
 const Lang = Language.getString('scrapers');
 var gis = require('g-i-s');
 const https = require('https');
+const ytmp3 = require('../lib/ytmp3');
 let wk = config.WORKTYPE == 'public' ? false : true
 
  Aqua.addCommand({pattern: 'song ?(.*)', fromMe: wk, desc: Lang.SONG_DESC, deleteCommand: false}, (async (message, match) => {
