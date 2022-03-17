@@ -15,7 +15,7 @@ Aqua.addCommand({ pattern: 'ig ?(.*)', fromMe: wk, desc:Lang.INSTA_DESC, deleteC
 
 if (!iglink) return await message.client.sendMessage(message.jid,Lang.N_URL, MessageType.text, { quoted: message.data });
 if (!match[1].includes('instagram.com')) return await message.client.sendMessage(message.jid,Lang.N_URL,MessageType.text, {quoted: message.data});
-await ig.insta({match[1]}).then(async (response) => {
+await ig.insta(match[1]).then(async (response) => {
     
 if (response.type == 'image') {	
 
@@ -49,7 +49,7 @@ Aqua.addCommand({ pattern: 'insta ?(.*)', fromMe: wk, desc:Lang.I_DESC, deleteCo
   if (!iglink) return await message.client.sendMessage(message.jid,Lang.N_USER, MessageType.text, { quoted: message.data });
   const user = iglink.replace("https://www.instagram.com/","")
   var load= await message.client.sendMessage(message.jid,Lang.D_USER, MessageType.text, { quoted: message.data });
-  await ig.igstalk(${user}).then(async (response) => {
+  await ig.igstalk(user).then(async (response) => {
     if(!response.status == 'error') {
     return await message.client.sendMessage(message.jid,Lang.E_USER, MessageType.text, { quoted: message.data });
        }
