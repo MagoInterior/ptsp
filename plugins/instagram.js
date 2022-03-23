@@ -22,8 +22,9 @@ if (response.type == 'image') {
 var load= await message.client.sendMessage(message.jid,Lang.D_POST, MessageType.text, { quoted: message.data });
 var up = await message.client.sendMessage(message.jid,Lang.U_POST, MessageType.text, { quoted: message.data });
 await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true}) ; 
-
-const msg = '┌───[🐋𝙰𝚀𝚄𝙰𝙱𝙾𝚃🐋]\n\n  *📥INSTAGRAM DOWNLODER*\n\n│❤️ʟɪᴋᴇs: ' + response.likes +  '\n\n│💬 ᴄᴏᴍᴍᴇɴᴛs: '+ response.comments + '\n\n│ 📤ᴜᴘʟᴏᴀᴅᴇʀ: ' + response.username +'\n\n│📂 ᴛʏᴘᴇ: '+ response.type + '\n\n└───────────◉'
+var msg = ''
+if (Config.DETAILS == 'true') msg = '┌───[🐋𝙰𝚀𝚄𝙰𝙱𝙾𝚃🐋]\n\n  *📥INSTAGRAM DOWNLODER*\n\n│❤️ʟɪᴋᴇs: ' + response.likes +  '\n\n│💬 ᴄᴏᴍᴍᴇɴᴛs: '+ response.comments + '\n\n│ 📤ᴜᴘʟᴏᴀᴅᴇʀ: ' + response.username +'\n\n│📂 ᴛʏᴘᴇ: '+ response.type + '\n\n└───────────◉'
+if (Config.DETAILS == 'false') msg = Config.CAPTION    
 const linkdata = await axios.get(response.url, { responseType: 'arraybuffer'})
 
 await message.sendMessage(Buffer.from(linkdata.data), MessageType.image , { caption: msg , quoted: message.data }) 
@@ -34,8 +35,9 @@ return await message.client.deleteMessage(message.jid, {id: up.key.id, remoteJid
 var load= await message.client.sendMessage(message.jid,Lang.D_VID, MessageType.text, { quoted: message.data });   
 var up = await message.client.sendMessage(message.jid,Lang.U_VID , MessageType.text, { quoted: message.data });
 await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true}) ; 
-
-const msg = '┌───[🐋𝙰𝚀𝚄𝙰𝙱𝙾𝚃🐋]\n\n  *📥INSTAGRAM DOWNLODER*\n\n│❤️ʟɪᴋᴇs: ' + response.likes +  '\n\n│💬 ᴄᴏᴍᴍᴇɴᴛs: '+ response.comments + '\n\n│ 📤ᴜᴘʟᴏᴀᴅᴇʀ: ' + response.username +'\n\n│📂 ᴛʏᴘᴇ: '+ response.type + '\n\n└───────────◉'
+var msg = ''
+if (Config.DETAILS == 'true') msg = '┌───[🐋𝙰𝚀𝚄𝙰𝙱𝙾𝚃🐋]\n\n  *📥INSTAGRAM DOWNLODER*\n\n│❤️ʟɪᴋᴇs: ' + response.likes +  '\n\n│💬 ᴄᴏᴍᴍᴇɴᴛs: '+ response.comments + '\n\n│ 📤ᴜᴘʟᴏᴀᴅᴇʀ: ' + response.username +'\n\n│📂 ᴛʏᴘᴇ: '+ response.type + '\n\n└───────────◉'
+if (Config.DETAILS == 'false') msg = Config.CAPTION      
 const linkdata = await axios.get(response.url, { responseType: 'arraybuffer'})
 
 await message.sendMessage(Buffer.from(linkdata.data), MessageType.video , { caption: msg , quoted: message.data})
