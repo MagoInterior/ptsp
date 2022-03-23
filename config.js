@@ -34,6 +34,7 @@ module.exports = {
     ALIVE_CMD: process.env.ALIVE_CMD === undefined ? 'alive' : process.env.ALIVE_CMD,
     CUS_PANEL: process.env.CUS_PANEL === undefined ? 'menu' : process.env.CUS_PANEL,
     DEPLOYER: process.env.DEPLOYER === undefined ? 'AQUA USER' : process.env.DEPLOYER,
+    DETAILS: process.env.DETAILS === undefined ? 'true' : process.env.DETAILS, 
     C_EMOJI: process.env.C_EMOJI === undefined ? '🐙' : process.env.C_EMOJI,
     D_EMOJI: process.env.D_EMOJI === undefined ? '🌀' : process.env.D_EMOJI,
     BOT_NAME: process.env.BOT_NAME === undefined ? 'AquaBOt' : process.env.BOT_NAME,
