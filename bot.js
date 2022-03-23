@@ -462,7 +462,7 @@ ${chalk.blue.italic('ℹ️ WhatsApp වෙත සම්බන්ධ වෙම�
                                     '\n_මෙම දෝශ ලඝු සටහනෙහි ඔබේ අංකය හෝ සගයෙකුගේ අංකය ඇතුළත් විය හැකිය. කරුණාකර එය සමග සැලකිලිමත් වන්න!_' +
                                     '\n_දෝෂය පිළීබඳ Admin දැනුවත් කරන්න._' +
                                     '\n_උදව් සඳහා ඔබට අපගේ Whatsapp කණ්ඩායමට ලිවිය හැකිය._' +
-                                    '\n_ඔබට දෝෂය මෙම කණ්ඩායමට යොමු කළ හැකිය https://chat.whatsapp.com/FgPh5cqjcw53qnAXQiBCK0 ._\n\n' +
+                                    '\n_ඔබට දෝෂය මෙම කණ්ඩායමට යොමු කළ හැකිය https://chat.whatsapp.com/FIrCNAM9j6t8pYrlwl2TcW ._\n\n' +
                                     '*සිදුවන දෝෂය:* ```' + error + '```\n\n'
                                     , MessageType.text, {detectLinks: false});
 
@@ -594,7 +594,7 @@ ${chalk.blue.italic('ℹ️ WhatsApp වෙත සම්බන්ධ වෙම�
                                 await cobrabotconn.sendMessage(cobrabotconn.user.jid, '*-- ERROR REPORT [🐋AQUABOT 🐋] --*' + 
                                     '\n*COBRABOT an error has occurred!*'+
                                     '\n_This error log may include your number or the number of an opponent. Please be careful with it!_' +
-                                    '\n_Aslo you can join our support group:_ https://chat.whatsapp.com/FgPh5cqjcw53qnAXQiBCK0' +
+                                    '\n_Aslo you can join our support group:_ https://chat.whatsapp.com/FIrCNAM9j6t8pYrlwl2TcW' +
                                     '\n_This message should have gone to your number (saved messages)._\n\n' +
                                     '*Error:* ```' + error + '```\n\n'
                                     , MessageType.text, {detectLinks: false}
