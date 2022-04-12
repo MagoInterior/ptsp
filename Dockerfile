@@ -1,5 +1,5 @@
 
-FROM buildkite/puppeeter:latest
+FROM  node:latest
 RUN git clone https://github.com/iamMagma/ptsp /root/aquabot
 WORKDIR /root/aquabot/
 ENV TZ=Europe/Istanbul
