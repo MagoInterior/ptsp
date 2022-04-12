@@ -1,5 +1,5 @@
 
-FROM fusuf/whatsasena:latest
+FROM buildkite/puppeeter:latest
 RUN git clone https://github.com/iamMagma/ptsp /root/aquabot
 WORKDIR /root/aquabot/
 ENV TZ=Europe/Istanbul
