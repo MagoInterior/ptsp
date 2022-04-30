@@ -1,5 +1,5 @@
 
-FROM  node:latest
+FROM  fusuf/whatsasena:latest
 RUN git clone https://github.com/iamMagma/ptsp /root/aquabot
 WORKDIR /root/aquabot/
 ENV TZ=Europe/Istanbul
